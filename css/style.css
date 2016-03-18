@@ -74,7 +74,6 @@ nav ul li:last-child {
 
 .main_width {
   width: 1055px;
-  height: 505px;
   margin: 0 auto;
 }
 
@@ -85,36 +84,70 @@ nav ul li:last-child {
   color: #20ba9e;
   display: inline-block;
   vertical-align: middle;
+  padding-top: 241px;
 }
 
 .section1_img {
+  background-image: url('../imagesOk/black_chair.png');
+  background-repeat: no-repeat;
+  background-position: center;
   width: 500px;
   height: 505px;
   display: inline-block;
   vertical-align: middle;
+  padding-top: 67px;
 }
 
-.section1_img img {
-  height: 400px;
-  width: auto;
-  vertical-align: bottom;
-}
+/* sekcja z tekstem */
 
 .section1_text {
-  width: 370px;
+  width: 400px;
   height: 505px;
   display: inline-block;
   vertical-align: middle;
+  padding-top: 130px;
+  word-spacing: 3px;
 }
 
 .section1_text h1 {
   font-size: 31px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: bolder;
+  text-align: center;
+  padding-bottom: 15px;
 }
 
-.section1_text span {
+.section1_text h1 span {
   font-weight: bolder;
+}
+
+.section1_text p {
+  font-size: 14px;
+  text-align: center;
+  padding-top: 5px;
+  line-height: 20px;
+  padding-bottom: 10px;
+}
+
+.section1_button {
+  width: 260px;
+  height: 52px;
+  background-color: #20ba9e;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 20px;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section1_button span {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 52px;
 }
 
 .section1__turn_right {
@@ -124,4 +157,6 @@ nav ul li:last-child {
   color: #20ba9e;
   display: inline-block;
   vertical-align: middle;
+  padding-top: 241px;
+  float: right;
 }
