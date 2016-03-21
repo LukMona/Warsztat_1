@@ -162,32 +162,62 @@ a {
 }
 
 /* Sekcja 2 */
+
 .section2 {
   margin: 0 auto;
   margin-bottom: 85px;
 }
+
 /*zdjęcia w sekcji 2 */
 
 .section2_foto1 {
   width: 330px;
-  height: 225px;
-  background-image: url(../imagesOk/box1_img.jpg);
+  height: 252px;
+  background-image: url('../imagesOk/box1_img.jpg');
   display: inline-block;
-  margin: 13px;
+  margin-top: 27px;
+  margin-left: 13px;
+  margin-right: 13px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  font-size: 14px;
 }
 
 .section2_foto2 {
   width: 330px;
-  height: 225px;
-  background-image: url(../imagesOk/box2_img.jpg);
+  height: 252px;
+  background-image: url('../imagesOk/box2_img.jpg');
   display: inline-block;
-  margin: 13px;
+  margin-top: 27px;
+  margin-left: 13px;
+  margin-right: 13px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  font-size: 14px;
+}
+
+.section2_foto1 span, .section2_foto2 span {
+  color: black;
+  font-weight: bold;
 }
 
 .section2_text {
   width: 300px;
-  height: 225px;
+  height: 252px;
   display: inline-block;
-  margin: 13px;
+  margin-top: 27px;
+  margin-left: 13px;
+  margin-right: 13px;
   border: 1px solid grey;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.section2_text p {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.section2_text__inside {
+  padding: 20px;
 }
