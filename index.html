@@ -5,22 +5,39 @@
   <title>Warsztat 1.5</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" type="text/javascript"></script>
 </head>
 <body>
+
+
+  <!-- NAGŁÓWEK -->
 
   <header>
     <div class="header">
       <div class="header_name">
         Sit <span>on</span> chair
       </div>
-      <nav>
+      <nav class="nav">
         <ul>
-          <li>O firmie</li>
+          <div class="nav_pointer_before"></div>
+          <li class="nav_pointer">O firmie
+
+            <!-- wysuwające się menu -->
+            <ul>
+              <li>Aktualności</li>
+              <li>Nasz team</li>
+              <li>Historia</li>
+            </ul>
+
+            <!-- koniec wysuwającego się menu -->
+          </li>
           <li>Galeria</li>
           <li>Kontakt</li>
         </nav>
       </div>
     </header>
+
+    <!-- SEKCJA 1 -->
 
     <section class="section1">
       <div class="main_width">
@@ -28,8 +45,26 @@
         <div class="section1__turn_left">
           <span>&lt;</span>
         </div>
-        <div class="section1_img">
+
+        <!-- SLIDER ze zdjęciami -->
+        <div class="slider">
+          <ul>
+            <li>
+              <div class="section1_img1">
+              </div>
+            </li>
+            <li>
+              <div class="section1_img2">
+              </div>
+            </li>
+            <li>
+              <div class="section1_img3">
+              </div>
+            </li>
+          </ul>
         </div>
+        <!-- koniec SLIDERA ze zdjęciami -->
+
         <div class="section1_text">
           <h1>Sit <span>on</span> our <span>chair</span></h1>
           <p>Cupcake ipsum dolor sit amet. Toffee tiramisu candy donut jelly beans I love. Pudding apple pie I love cotton candy tootsie roll candy donut. Lemon drops donut tiramisu I love cheesecake.
@@ -38,6 +73,7 @@
             <span>Zobacz więcej</span>
           </a>
         </div>
+
         <div class="section1__turn_right">
           <span>&gt;</span>
         </div>
@@ -45,35 +81,212 @@
       </div>
     </section>
 
+    <!-- SEKCJA DRUGA -->
+
     <section class="section2">
       <div class="main_width">
-        <div class="section2_foto1">
-          <span>Chair CLAIR</span>
+        <div class="section2_foto1 section2_invisible">
+          <h3><span>Chair CLAIR</span></h3>
+
         </div>
-        <div class="section2_foto2">
-          <span>Chair MARGARITA</span>
+        <div class="section2_foto2 section2_invisible">
+          <h3><span>Chair MARGARITA</span></h3>
+
         </div>
         <div class="section2_text">
           <div class="section2_text__inside">
-          <span>Finds all inputs</span>
-          <p>Finds all inputs that are not checked and highlights the next sibling span. Notice there is no change when clicking the checkboxes since no click events have been linked.</p>
-          <p>Notice there is no change when clicking the checkboxes since no click events have been</p>
-        </div>
+            <span>Finds all inputs</span>
+            <p>Finds all inputs that are not checked and highlights the next sibling span. Notice there is no change when clicking the checkboxes since no click events have been linked.</p>
+            <p>Notice there is no change when clicking the checkboxes since no click events have been</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="cennik">
+    <!-- CENNIK -->
+
+    <!-- NAGŁÓWEK CENNIK -->
+
+    <section class="price">
       <div class="main_width">
+        <div class="price_header">
+          <span>Cennik</span>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <!-- CENY -->
+
+        <div class="price_options">
+
+          <!-- CENY PODSTAWOWE -->
+          <div class="price_info">
+
+            <div class="outside_circle">
+              <div class="inside_circle">
+              </div>
+            </div>
+
+            <div class="price__cost_header">
+              <span>Basic plan</span>
+              <div class="price_cost">
+                <div class="price__cost_value">
+                  <span>85<sup>99</sup></span>
+                  <span>pln/msc</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="price_options">
+              <p>Zakup towaru + dowóz</p>
+              <p>Serwis</p>
+
+            </div>
+            <div class="price_button">
+              <a href="#" class="price__button_push">
+                <span>Dołącz</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- CENY STANDARDOWE -->
+          <div class="price_info">
+
+            <div class="outside_circle_even">
+              <div class="inside_circle_even">
+              </div>
+            </div>
+
+            <div class="price__cost_header_even">
+              <span>Standard plan</span>
+              <div class="price__cost_even">
+                <div class="price__cost_value">
+                  <span>95<sup>99</sup></span>
+                  <span>pln/msc</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="price__options_even">
+              <p>Zakup towaru + dowóz</p>
+              <p>Serwis</p>
+              <p>Gwarancja 5 lat</p>
+            </div>
+
+            <div class="price__button_even">
+              <a href="#" class="price__button_push">
+                <span>Dołącz</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- CENY FULL PAKIETU -->
+          <div class="price_info">
+
+            <div class="outside_circle">
+              <div class="inside_circle">
+              </div>
+            </div>
+
+            <div class="price__cost_header">
+              <span>Advance plan</span>
+              <div class="price_cost">
+                <div class="price__cost_value">
+                  <span>211<sup>00</sup></span>
+                  <span>pln/msc</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="price_options">
+              <p>Zakup towaru + dowóz</p>
+              <p>Serwis</p>
+              <p>Gwarancja 6 lat</p>
+              <p>Porady projektanta</p>
+            </div>
+            <div class="price_button">
+              <a href="#" class="price__button_push">
+                <span>Dołącz</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- KONTAKT -->
 
     <section class="kontakt">
       <div class="main_width">
+
+        <div class="kontakt_header">
+          <p>Kontakt</p>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="kontakt_main">
+
+          <div class="kontakt_form">
+            <form>
+              <input type="text" name="userName" value="Imię" placeholder="Imię">
+              <br>
+              <input type="email" name="email" value="email" placeholder="email">
+              <br>
+              <textarea placeholder="Wiadomość"></textarea>
+            </form>
+          </div>
+
+          <div class="kontakt__send_area">
+            <div class="kontakt_image">
+              <img src="imagesOk/red_chair.png">
+            </div>
+
+            <!-- DANE OSOBOWE CHECKBOX -->
+
+            <div class="kontakt_dane">
+              <label for="kontakt_data">
+                <input type="checkbox" id="kontakt_data" checked>
+                <span>
+                  Zgadzam się na przetwarzanie danych osobowych
+                </span>
+              </label>
+
+            </div>
+
+            <!-- DANE OSOBOWE WYŚLIJ FORMULARZ -->
+
+            <a href="#" class="kontakt_button">
+              <span>Wyślij</span>
+            </a>
+          </div>
+
+        </div>
       </div>
     </section>
 
     <footer>
+      <div class="main_width">
+
+        <div class="footer_copyright">
+          <p>Copyright 2014 | All Rights Reserved. - Sit On Chair</p>
+        </div>
+
+        <div class="footer_name">
+          <span>Sit <strong>on</strong> chair</span>
+        </div>
+
+        <div class="footer_links">
+          <ul>
+            <li><a href="#"><img src="imagesOk/flickr.png"></a></li>
+            <li><a href="#"><img src="imagesOk/vimeo.png"></a></li>
+            <li><a href="#"><img src="imagesOk/pinterest.png"></a></li>
+            <li><a href="#"><img src="imagesOk/twitter.png"></a></li>
+          </ul>
+        </div>
+
+      </div>
     </footer>
 
 

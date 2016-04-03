@@ -1,17 +1,30 @@
 @font-face {
-    font-family: 'ralewayregular';
-    src: url('../fonts/raleway-regular.eot');
-    src: url('../fonts/raleway-regular.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway-regular.woff2') format('woff2'),
-         url('../fonts/raleway-regular.woff') format('woff'),
-         url('../fonts/raleway-regular.ttf') format('truetype'),
-         url('../fonts/raleway-regular.svg#ralewayregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'ralewayregular';
+  src: url('../fonts/raleway-regular.eot');
+  src: url('../fonts/raleway-regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/raleway-regular.woff2') format('woff2'),
+  url('../fonts/raleway-regular.woff') format('woff'),
+  url('../fonts/raleway-regular.ttf') format('truetype'),
+  url('../fonts/raleway-regular.svg#ralewayregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ralewaythin';
+  src: url('../fonts/raleway-thin.eot');
+  src: url('../fonts/raleway-thin.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/raleway-thin.woff2') format('woff2'),
+  url('../fonts/raleway-thin.woff') format('woff'),
+  url('../fonts/raleway-thin.ttf') format('truetype'),
+  url('../fonts/raleway-thin.svg#ralewaythin') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-  font-family: 'ralewayregular';
+  font-family: 'ralewayregular', Helvetica, Arial, sans-serif;;
 }
 
 /* Header */
@@ -51,10 +64,55 @@ nav ul li {
   display: inline-block;
   word-spacing: 2px;
   margin-right: 20px;
+  position: relative;
 }
 
 nav ul li:last-child {
   margin-right: 0;
+}
+
+/* Wysuwające się menu */
+
+.nav>ul>li {
+  display: inline-block;
+  position: relative;;
+}
+
+.nav>ul>li>ul{
+  display: none;
+  position: absolute;
+  width: 120px;
+  height: 100px;
+  background-color: black;
+  margin-top: 19px;
+  margin-left: -25px;
+  text-align: left;
+  font-size: 14px;
+  text-transform: capitalize;
+  padding-left: 14px;
+}
+
+.nav:after {
+  position: relative;
+}
+
+.nav>ul>li>ul li {
+  padding-top: 12px;
+}
+
+/* trójkąt do wysuwającego się menu */
+
+.nav_pointer_before {
+  display: none;
+  content: '';
+  position: absolute;
+  width: 0;
+	height: 0;
+  padding-bottom: 20px;
+  margin-left: 20px;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid black;
 }
 
 /* Pierwsza sekcja */
@@ -78,7 +136,7 @@ nav ul li:last-child {
 }
 
 .section1__turn_left {
-  width: 50px;
+  width: 40px;
   height: 505px;
   font-size: 43px;
   color: #20ba9e;
@@ -87,7 +145,17 @@ nav ul li:last-child {
   padding-top: 241px;
 }
 
-.section1_img {
+/* SLIDER ze zdjęciami */
+
+.slider {
+  width: 500px;
+  height: 505px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 67px;
+}
+
+.section1_img1 {
   background-image: url('../imagesOk/black_chair.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -98,10 +166,48 @@ nav ul li:last-child {
   padding-top: 67px;
 }
 
+.section1_img2 {
+  background-image: url('../imagesOk/orange_chair.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 500px;
+  height: 505px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 67px;
+}
+
+.section1_img3 {
+  background-image: url('../imagesOk/red_chair_slider.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 500px;
+  height: 505px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 67px;
+}
+
+.slider ul {
+  list-style: none;
+}
+
+.slider li {
+  display: none;
+}
+
+.slider .visible {
+  display: inline-block;
+}
+
+.section1__turn_right, .section1__turn_left {
+  cursor: pointer;
+}
+
 /* sekcja z tekstem */
 
 .section1_text {
-  width: 400px;
+  width: 350px;
   height: 505px;
   display: inline-block;
   vertical-align: middle;
@@ -151,7 +257,7 @@ a {
 }
 
 .section1__turn_right {
-  width: 50px;
+  width: 40px;
   height: 505px;
   font-size: 43px;
   color: #20ba9e;
@@ -196,9 +302,19 @@ a {
   font-size: 14px;
 }
 
-.section2_foto1 span, .section2_foto2 span {
+.section2_foto1 h3, .section2_foto2 h3 {
+  background: rgba(255, 255, 255, 0.5);
+  padding-top: 15px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  margin-top: 150px;
+}
+
+h3 span {
   color: black;
-  font-weight: bold;
+  font-weight: bolder;
+  border-bottom: 8px solid #20ba9e;
+  padding-bottom: 2px;
 }
 
 .section2_text {
@@ -208,16 +324,415 @@ a {
   margin-top: 27px;
   margin-left: 13px;
   margin-right: 13px;
-  border: 1px solid grey;
+  border: 1px solid #a6a6a6;
   vertical-align: middle;
   font-size: 14px;
 }
 
+.section2_text span {
+  border-bottom: 8px solid #20ba9e;
+  padding-bottom: 2px;
+  color: black;
+  font-weight: bold;
+}
+
 .section2_text p {
-  padding-top: 15px;
+  padding-top: 25px;
   padding-bottom: 15px;
+  color: #a6a6a6;
 }
 
 .section2_text__inside {
   padding: 20px;
+}
+
+/* CENNIK */
+
+.price {
+  background-color: #f1f1f1;
+  height: 725px;
+}
+
+/* Nagłówek Cennik */
+
+.price_header {
+  font-size: 20px;
+  text-transform: uppercase;
+  border-bottom: 8px solid #20ba9e;
+  width: 320px;
+  padding-bottom: 5px;
+  padding-top: 50px;
+  vertical-align: middle;
+  float: left;
+}
+
+.price_header span {
+  color: black;
+  font-weight: bolder;
+}
+
+/* Koła w cenniku na górze */
+
+.outside_circle {
+  height: 50px;
+  width: 50px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  border: 1px solid #c2c2c2;
+  margin: 0 auto;
+  position: relative;
+  margin-top: -64px;
+}
+
+.inside_circle {
+  height: 25px;
+  width: 25px;
+  background-color: #c2c2c2;
+  border-radius: 50px;
+  margin: 0 auto;
+  position: absolute;
+  left: 12px;
+  top: 11px;
+}
+
+.outside_circle_even {
+  height: 50px;
+  width: 50px;
+  background-color: #27c7ab;
+  border-radius: 50px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: -64px;
+}
+
+.inside_circle_even {
+  height: 25px;
+  width: 25px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  margin: 0 auto;
+  position: absolute;
+  left: 12px;
+  top: 11px;
+}
+
+/* Właściwy cennik */
+
+.price_info {
+  width: 325px;
+  height: 500px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #c2c2c2;
+  margin-right: 20px;
+  margin-top: 75px;
+  text-align: center;
+  padding-top: 32px;
+  padding-bottom: 30px;
+  position: relative;
+  background-color: #f9f9f9;
+}
+
+.price_info:nth-child(2n+2){
+  border: 1px solid #20ba9e;
+  background-color: #27c7ab;
+}
+
+/* Nazwa planu + cena */
+
+.price__cost_header, .price__cost_header_even {
+  margin-top: 32px;
+}
+
+.price__cost_header span {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #27c7ab;
+}
+
+.price__cost_header_even span {
+  font-size: 20px;
+  font-size: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.price_cost, .price__cost_even {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #c2c2c2;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-bottom: 34px;
+  margin-top: 30px;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+.price__cost_even {
+  border: none;
+}
+
+.price__cost_value {
+  padding: 18px;
+}
+
+.price__cost_value span:first-child {
+  font-size: 34px;
+}
+
+.price__cost_value span:last-child {
+  font-size: 14px;
+}
+
+.price_cost span {
+  color: #c1c1c1;
+  font-weight: bolder;
+}
+
+.price__cost_even span {
+  color: #27c7ab;
+  font-weight: bolder;
+}
+
+.price__cost_header sup, .price__cost_header_even sup {
+  font-size: 10px;
+  vertical-align: top;
+  position: relative;
+  font-weight: bolder;
+  top: 9px;
+  left: 2px;
+}
+
+/* Opcje w planach */
+
+.price_options p {
+  font-size: 22px;
+  color: #9e9e9e;
+  height: 42px;
+  text-align: center;
+  line-height: 42px;
+}
+
+.price_options p:nth-child(2n+1) {
+  background-color: #e4e4e4;
+}
+
+.price_options p:nth-child(2n+2) {
+  background-color: #f1f1f1;
+}
+
+.price__options_even p:nth-child(2n+1) {
+  background-color: #ffffff;
+}
+
+.price__options_even p:nth-child(2n+2) {
+  background-color: #f1f1f1;
+}
+
+.empty p {
+  background-color: none;
+}
+
+.empty_even p {
+  background-color: none;
+}
+
+
+/* Guzik */
+
+.price_button, .price__button_even {
+  width: 120px;
+  height: 35px;
+  margin: 0 auto;
+  background-color: #27c7ab;
+  border-radius: 10px;
+  position: absolute;
+  top: 450px;
+  left: 105px;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+}
+
+.price__button_even {
+  background-color: #ffffff;
+}
+
+.price_button span {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 35px;
+}
+
+.price__button_even span {
+  color: #27c7ab;
+  font-size: 14px;
+  line-height: 35px;
+}
+
+/* KONTAKT */
+.kontakt {
+  height: 565px;
+  background-color: #ffffff;
+}
+
+/* KONTAKT HEADER */
+
+.kontakt_header {
+  margin-top: 35px;
+  text-transform: uppercase;
+  border-bottom: 8px solid #20ba9e;
+  width: 320px;
+  padding-bottom: 5px;
+  vertical-align: middle;
+  float: left;
+}
+
+.kontakt_header p {
+  color: #555555;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* KONTAKT MAIN + 2 GŁÓWNE DIVY */
+
+.kontakt_main {
+  margin-top: 45px;
+}
+
+.kontakt_form {
+  display: inline-block;
+  width: 650px;
+  height: 565px;
+  vertical-align: middle;
+}
+
+.kontakt__send_area {
+  display: inline-block;
+  width: 330px;
+  height: 565px;
+  vertical-align: middle;
+  margin-left: 60px;
+}
+
+/* KONTAKT FORMULARZ */
+
+.kontakt_form input {
+  width: 635px;
+  height: 65px;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-family: 'ralewaythin';
+  padding-left: 15px;
+  border: 1px solid #a6e3d3;
+}
+
+.kontakt_form textarea {
+  width: 635px;
+  height: 190px;
+  border: 1px solid #a6e3d3;
+  padding-left: 15px;
+  font-size: 26px;
+  font-family: 'ralewaythin';
+  padding-top: 20px;
+}
+
+.kontakt_form textarea[placeholder] {
+  color: #e4e4e4;
+}
+
+
+
+/* KONTAKT IMG + CHECKBOX */
+
+.kontakt_image {
+  text-align: center;
+  margin-top: -20px;
+}
+
+.kontakt_dane {
+  margin-top: 26px;
+  margin-bottom: 38px;
+}
+
+.kontakt_dane input[type="checkbox"] {
+  display: none;
+}
+
+.kontakt_dane label span:before {
+  content: "";
+  display: inline-block;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  background: url('../imagesOk/form_ok.jpg') center no-repeat;
+  outline: 1px solid #24ba9f;
+  float: left;
+}
+
+.kontakt_dane label span {
+  font-size: 18px;
+  color: #b2b2b2;
+  text-align: left;
+  line-height: normal;
+}
+
+
+/* KONTAKT GUZIK WYŚLIJ */
+
+.kontakt_button {
+  height: 70px;
+  width: 340px;
+  background-color: #24ba9f;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.kontakt_button span {
+  color: #ffffff;
+  font-size: 26px;
+  text-transform: uppercase;
+  line-height: 70px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+
+/* FOOTER */
+
+.footer_copyright {
+  float: left;
+  font-size: 14px;
+  color: grey;
+  height: 50px;
+  line-height: 40px;
+}
+
+.footer_name {
+  float:right;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer_name span {
+  color: grey;
+  letter-spacing: 1px;
+  line-height: 40px;
+}
+
+.footer_links {
+  float: right;
+  margin-right: 65px;
+  height: 50px;
+}
+
+.footer_links ul li {
+  display: inline-block;
 }
